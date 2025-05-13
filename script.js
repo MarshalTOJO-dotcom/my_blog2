@@ -1,4 +1,4 @@
-// "Click Me" button interaction + GA event
+// "Click Me" button interaction
 document.getElementById("clickMeBtn")?.addEventListener("click", function() {
   this.style.backgroundColor = "#00ff99";
   this.innerText = "Clicked!";
@@ -7,19 +7,18 @@ document.getElementById("clickMeBtn")?.addEventListener("click", function() {
   gtag('event', 'button_click', {
     'event_category': 'engagement',
     'event_label': 'Click Me Button',
-    'page_title': document.title,
-    'page_location': window.location.href,
-    'custom_button_name': 'Click Me' // Custom Dimension
+    'custom_button_name': 'Click Me',      // Custom Dimension
+    'button_click_count': 1                // Custom Metric (numeric)
   });
 });
 
-// Form Submit Button
+// Form Submit
 document.getElementById("submitBtn")?.addEventListener("click", function () {
   gtag('event', 'form_submit', {
     'event_category': 'contact',
     'event_label': 'Contact Form Submit',
-    'page_title': document.title,
-    'custom_form_type': 'Contact Form' // Custom Dimension
+    'custom_form_type': 'Contact Form',    // Custom Dimension
+    'form_submit_count': 1                 // Custom Metric (numeric)
   });
 });
 
@@ -28,8 +27,8 @@ document.getElementById("myVideo")?.addEventListener("play", function () {
   gtag('event', 'video_play', {
     'event_category': 'media',
     'event_label': 'Blog Video Play',
-    'page_title': document.title,
-    'custom_media_type': 'Video' // Custom Dimension
+    'custom_media_type': 'Video',          // Custom Dimension
+    'video_play_count': 1                  // Custom Metric (numeric)
   });
 });
 
@@ -38,11 +37,11 @@ document.getElementById("fileUpload")?.addEventListener("change", function () {
   gtag('event', 'file_upload', {
     'event_category': 'interaction',
     'event_label': 'User Uploaded File',
-    'page_title': document.title
+    'file_upload_count': 1                 // Optional metric
   });
 });
 
-// Scroll Depth (90%)
+// Scroll Depth
 window.addEventListener('scroll', function () {
   const scrolled = (window.innerHeight + window.scrollY) / document.body.scrollHeight;
   if (scrolled > 0.9 && !window.hasScrolledDeep) {
@@ -50,7 +49,7 @@ window.addEventListener('scroll', function () {
     gtag('event', 'scroll_depth', {
       'event_category': 'engagement',
       'event_label': 'Scrolled 90%',
-      'page_title': document.title
+      'scroll_depth_percent': 90            // Optional metric
     });
   }
 });
