@@ -8,7 +8,8 @@ document.getElementById("clickMeBtn")?.addEventListener("click", function() {
     'event_category': 'engagement',
     'event_label': 'Click Me Button',
     'page_title': document.title,
-    'page_location': window.location.href
+    'page_location': window.location.href,
+    'custom_button_name': 'Click Me' // Custom Dimension
   });
 });
 
@@ -17,7 +18,8 @@ document.getElementById("submitBtn")?.addEventListener("click", function () {
   gtag('event', 'form_submit', {
     'event_category': 'contact',
     'event_label': 'Contact Form Submit',
-    'page_title': document.title
+    'page_title': document.title,
+    'custom_form_type': 'Contact Form' // Custom Dimension
   });
 });
 
@@ -26,7 +28,8 @@ document.getElementById("myVideo")?.addEventListener("play", function () {
   gtag('event', 'video_play', {
     'event_category': 'media',
     'event_label': 'Blog Video Play',
-    'page_title': document.title
+    'page_title': document.title,
+    'custom_media_type': 'Video' // Custom Dimension
   });
 });
 
