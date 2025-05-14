@@ -37,7 +37,8 @@ document.getElementById("fileUpload")?.addEventListener("change", function () {
   gtag('event', 'file_upload', {
     'event_category': 'interaction',
     'event_label': 'User Uploaded File',
-    'file_upload_count': 1                 // Optional metric
+    'page_title': document.title,
+    'file_size_kb': 512  // Optional metric
   });
 });
 
