@@ -41,16 +41,3 @@ document.getElementById("fileUpload")?.addEventListener("change", function () {
     'file_size_kb': 512  // Optional metric
   });
 });
-
-// Scroll Depth
-window.addEventListener('scroll', function () {
-  const scrolled = (window.innerHeight + window.scrollY) / document.body.scrollHeight;
-  if (scrolled > 0.9 && !window.hasScrolledDeep) {
-    window.hasScrolledDeep = true;
-    gtag('event', 'scroll_depth', {
-      'event_category': 'engagement',
-      'event_label': 'Scrolled 90%',
-      'scroll_depth_percent': 90            // Optional metric
-    });
-  }
-});
